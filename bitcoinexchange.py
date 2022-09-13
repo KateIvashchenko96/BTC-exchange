@@ -23,7 +23,7 @@ class BitcoinExchange:
 
 
     def bitcoin_exchange_value(self):
-        result = int(self.get_USD()) / int(self.get_BTC_price())
+        result = self.get_USD() / self.get_BTC_price()
         return round(result, 7)
 
 if __name__ == '__main__':
