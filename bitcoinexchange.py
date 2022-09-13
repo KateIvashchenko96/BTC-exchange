@@ -7,7 +7,6 @@ class BitcoinExchange:
 
     def __init__(self, BTC, USD):
         self.set_values(BTC, USD)
-        self.get_BTC_price()
 
     def set_values(self, BTC, USD):
         self.__BTC_price = BTC
