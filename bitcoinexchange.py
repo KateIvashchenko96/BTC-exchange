@@ -26,10 +26,21 @@ class BitcoinExchange:
         result = self.get_USD() / self.get_BTC_price()
         return round(result, 7)
 
-if __name__ == '__main__':
-
+def main_program():
     BTC_price = float(input("What is Bitcoin price today?\n"))
     USD = float(input("How much $ do you have?\n"))
-    print(BitcoinExchange(BTC=BTC_price, USD=USD))
+    if BTC_price <= 0:
+        raise TypeError('Bitcoin price must be greater than zero')
+    elif USD <= 0:
+        raise TypeError('Dollars price must be greater than zero')
+    else:
+        print(BitcoinExchange(BTC=BTC_price, USD=USD))
+
+if __name__ == '__main__':
+    try:
+        main_program()
+    except ValueError:
+        print("Please enter a number!")
+        exit(1)
 
 
